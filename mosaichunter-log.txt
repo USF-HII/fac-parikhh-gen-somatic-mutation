@@ -1,7 +1,7 @@
 MosaicHunter 1.0
-Thu Sep 03 14:37:31 UTC 2026
+Fri Sep 11 01:25:23 UTC 2026
 Parameters:
-genome -P misaligned_reads_filter.blat_path=/home/bioinfo/core/ref/prj/somatic-mutation/mosaichunter/blat-v369 -P input_file=/home/bioinfo/core/lab/radiant/broad/Human-WGS-BAM-1/RADIANT_Set001-002_41samples/RADIANT_Set001-002_41samples_BAM/134542-0359493956_PM21-00438-A_SM-L5BY4_v1_WGS_GCP.bam -P reference_file=/home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.fasta -P mosaic_filter.dbsnp_file=/home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.gz -P mosaic_filter.sex=M -P output_dir=/home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/task/mosaichunter 
+genome -P misaligned_reads_filter.blat_path=/home/bioinfo/core/ref/prj/somatic-mutation/mosaichunter/blat-v369 -P input_file=/home/bioinfo/core/lab/radiant/broad/Human-WGS-BAM-1/RADIANT_Set001-002_41samples/RADIANT_Set001-002_41samples_BAM/134542-0359493956_PM21-00438-A_SM-L5BY4_v1_WGS_GCP.bam -P reference_file=/home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.fasta -P mosaic_filter.dbsnp_file=/home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.gz -P repetitive_region_filter.bed_file=/home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_repetitive_region_hg38.bed -P indel_region_filter.bed_file=/home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_indel_hg38.bed -P common_site_filter.bed_file=/home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_common_hg38.bed -P mosaic_filter.sex=M -P output_dir=/home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/task/mosaichunter
 
 base_quality = 33
 chr_x_name = X
@@ -29,7 +29,7 @@ clustered_filter.inner_distance = 20000
 clustered_filter.outer_distance = 20000
 clustered_filter.output_filtered = true
 clustered_filter.output_passed = true
-common_site_filter.bed_file = 
+common_site_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_common_hg38.bed
 common_site_filter.class = cn.edu.pku.cbi.mosaichunter.filter.RegionFilter
 common_site_filter.expansion = 0
 common_site_filter.include = false
@@ -58,7 +58,7 @@ homopolymers_filter.short_homopolymer_expansion = 2
 homopolymers_filter.short_homopolymer_length = 4
 in_process_filter.class = cn.edu.pku.cbi.mosaichunter.filter.AndFilter
 in_process_filter.filters = base_number_filter,repetitive_region_filter,homopolymers_filter,indel_region_filter,mosaic_and_mosaic_like_filter
-indel_region_filter.bed_file = 
+indel_region_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_indel_hg38.bed
 indel_region_filter.class = cn.edu.pku.cbi.mosaichunter.filter.RegionFilter
 indel_region_filter.expansion = 0
 indel_region_filter.include = false
@@ -74,7 +74,7 @@ misaligned_reads_filter.min_side_distance = 15
 misaligned_reads_filter.misalignment_threshold = 0.5
 misaligned_reads_filter.output_filtered = true
 misaligned_reads_filter.output_passed = true
-misaligned_reads_filter.reference_file = 
+misaligned_reads_filter.reference_file =
 mosaic_and_mosaic_like_filter.class = cn.edu.pku.cbi.mosaichunter.filter.OrFilter
 mosaic_and_mosaic_like_filter.filters = mosaic_common_filter,mosaic_like_filter
 mosaic_common_filter.class = cn.edu.pku.cbi.mosaichunter.filter.AndFilter
@@ -83,15 +83,15 @@ mosaic_filter.alpha_param = 0
 mosaic_filter.base_change_rate = 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 mosaic_filter.beta_param = 0
 mosaic_filter.class = cn.edu.pku.cbi.mosaichunter.filter.MosaicFilter
-mosaic_filter.control_bam_file = 
+mosaic_filter.control_bam_file =
 mosaic_filter.dbsnp_file = /home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.gz
 mosaic_filter.de_novo_rate = 1e-8
-mosaic_filter.father_bam_file = 
-mosaic_filter.fisher_threshold = 0.01                   
+mosaic_filter.father_bam_file =
+mosaic_filter.fisher_threshold = 0.01
 mosaic_filter.mode = single
 mosaic_filter.mosaic_rate = 1e-7
 mosaic_filter.mosaic_threshold = 0.05
-mosaic_filter.mother_bam_file = 
+mosaic_filter.mother_bam_file =
 mosaic_filter.novel_af = 1e-4
 mosaic_filter.output_filtered = true
 mosaic_filter.output_passed = true
@@ -114,7 +114,7 @@ null_filter.output_passed = true
 null_filter.return_value = false
 post_process_filter.class = cn.edu.pku.cbi.mosaichunter.filter.AndFilter
 post_process_filter.filters = near_mosaic_filter,misaligned_reads_filter,clustered_filter,final
-repetitive_region_filter.bed_file = 
+repetitive_region_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_repetitive_region_hg38.bed
 repetitive_region_filter.class = cn.edu.pku.cbi.mosaichunter.filter.RegionFilter
 repetitive_region_filter.include = false
 repetitive_region_filter.output_filtered = true
@@ -127,12 +127,12 @@ within_read_position_filter.class = cn.edu.pku.cbi.mosaichunter.filter.WithinRea
 within_read_position_filter.output_filtered = true
 within_read_position_filter.output_passed = true
 within_read_position_filter.p_value_cutoff = 0.05
-Thu Sep 03 14:37:31 UTC 2026 Initializing...
-Thu Sep 03 14:37:33 UTC 2026 Reading reference from file: /home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.fasta
-Thu Sep 03 14:37:50 UTC 2026 Initializing filters...
-Thu Sep 03 14:37:50 UTC 2026 Scanning...
-Thu Sep 03 14:37:50 UTC 2026 - Time(s):0 Reads:0 Sites:0/0 Progress:0.00%
-Thu Sep 03 14:37:50 UTC 2026 - Time(s):0 Reads:0 Sites:0/0 Progress:100.00%
+Fri Sep 11 01:25:23 UTC 2026 Initializing...
+Fri Sep 11 01:25:25 UTC 2026 Reading reference from file: /home/bioinfo/core/ref/broad/hg38/v0/Homo_sapiens_assembly38.fasta
+Fri Sep 11 01:25:43 UTC 2026 Initializing filters...
+Fri Sep 11 01:25:53 UTC 2026 Scanning...
+Fri Sep 11 01:25:53 UTC 2026 - Time(s):0 Reads:0 Sites:0/0 Progress:0.00%
+Fri Sep 11 01:25:53 UTC 2026 - Time(s):0 Reads:0 Sites:0/0 Progress:100.00%
 filter name                                          pass/all   ratio
 base_number_filter                                        0/0    NaN%
 repetitive_region_filter                                  0/0    NaN%

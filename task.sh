@@ -46,6 +46,9 @@ task_mosaichunter() {
     -P input_file=${MH_INPUT_FILE} \
     -P reference_file=${MH_REFERENCE_FILE} \
     -P mosaic_filter.dbsnp_file=${MH_DBSNP_FILE} \
+    -P repetitive_region_filter.bed_file=${MH_REPETITIVE_REGION_BED} \
+    -P indel_region_filter.bed_file=${MH_INDEL_BED} \
+    -P common_site_filter.bed_file=${MH_COMMON_BED} \
     -P mosaic_filter.sex=M \
     -P output_dir=${out}
 
@@ -64,6 +67,9 @@ MH_INPUT_DIR=${BIO}/lab/radiant/broad/Human-WGS-BAM-1/RADIANT_Set001-002_41sampl
 MH_INPUT_FILE=${MH_INPUT_DIR}/134542-0359493956_PM21-00438-A_SM-L5BY4_v1_WGS_GCP.bam
 MH_REFERENCE_FILE=${BIO}/ref/broad/hg38/v0/Homo_sapiens_assembly38.fasta
 MH_DBSNP_FILE=${BIO}/ref/broad/hg38/v0/Homo_sapiens_assembly38.dbsnp138.vcf.gz
+MH_REPETITIVE_REGION_BED=${TOP}/tmp/data/ucsc_repetitive_region_hg38.bed
+MH_INDEL_BED=${TOP}/tmp/data/ucsc_indel_hg38.bed
+MH_COMMON_BED=${TOP}/tmp/data/ucsc_common_hg38.bed
 MH_BLAT_PATH=${BIO}/ref/prj/somatic-mutation/mosaichunter/blat-v369
 MH_JAR=${BIO}/ref/prj/somatic-mutation/mosaichunter/mosaichunter-4bdadaa7.jar
 

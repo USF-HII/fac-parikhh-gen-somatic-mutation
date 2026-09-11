@@ -16,6 +16,24 @@ software
 
 ## log
 
+## 2026-09-10 mosaichunter
+
+We were able to add the following UCSC files from `/home/bioinfo/outbox/parikhh/for_kevin/teddy_ncc2_wgs` and copied them
+under `tmp/data/` for testing.
+
+After executing, mosaichunter picked up these files according to the log:
+```
+tmp/task/mosaichunter/stdout_20260911_012523.156.log:common_site_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_common_hg38.bed
+tmp/task/mosaichunter/stdout_20260911_012523.156.log:indel_region_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_indel_hg38.bed
+tmp/task/mosaichunter/stdout_20260911_012523.156.log:repetitive_region_filter.bed_file = /home/countskm/dev/usf-hii/gen-somatic-mutation/tmp/data/ucsc_repetitive_region_hg38.bed
+```
+
+However all `*.tsv` outputs are still showing 0 byte output.
+
+We updated the log output to the newest run and it is available here:
+- https://github.com/USF-HII/fac-parikhh-gen-somatic-mutation/blob/main/mosaichunter-log.txt
+
+
 ## 2026-09-03 mosaichunter
 
 After much trial and error we have a "running" mosaichunter.
